@@ -1,6 +1,8 @@
 #ifndef FRESCOMAINSOCOMPRESSOR_H_INCLUDED
 #define FRESCOMAINSOCOMPRESSOR_H_INCLUDED
 
+#include <cstdlib>
+
 // second order referential match entry (including an id for a reference sequence)
 class SORME
 {
@@ -417,7 +419,7 @@ public:
             string curref=files[rand()%files.size()];
             while (curref.compare(refpathfull)==0 or forefpaths.find(curref)!=forefpaths.end())
             {
-                curref=files[abs(rand()%files.size())];
+                curref=files[abs(static_cast<int>(rand()%files.size()))];
             }
 
             FOReference *newforef=new FOReference(cfp, l, curref);
