@@ -18,7 +18,7 @@ Release: ../FRESCO
 
 ../FRESCO: $(OBJS_RELEASE)
 	@echo Building console executable ../FRESCO
-	@g++ -lz -lboost_system -lboost_filesystem -lboost_iostreams -o ../FRESCO $(OBJS_RELEASE)  -s  
+	@g++ -I /usr/local/include -L /usr/lib/x86_64-linux-gnu -lz -lboost_system -lboost_filesystem -lboost_iostreams -o ../FRESCO $(OBJS_RELEASE)  -s
 
 ../main.o: ../source/main.cpp
 	@echo Compiling: ../source/main.cpp
